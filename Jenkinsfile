@@ -63,7 +63,7 @@ pipeline {
             steps {
                 sh '''
                   for attempt in 1 2 3 4 5; do
-                    if curl --fail --silent http://localhost:${APP_PORT}/health; then
+                    if curl --fail --silent http://host.docker.internal:${APP_PORT}/health; then
                       exit 0
                     fi
                     sleep 3
