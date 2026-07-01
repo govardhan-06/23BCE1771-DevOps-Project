@@ -1,5 +1,5 @@
 # Stage 1: Maven build
-FROM maven:3.9-eclipse-temurin-17-alpine AS build
+FROM maven:3.9.16-amazoncorretto-17-debian AS build
 WORKDIR /workspace
 COPY pom.xml .
 COPY src ./src
