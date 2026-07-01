@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Govardhan A R - Software Engineer and AI systems builder." />
+  <title>Govardhan A R | Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Govardhan home">G<span>.</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero container">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="status-dot"></span> Available for ambitious engineering work</p>
+        <h1>Building reliable software with <span>AI at the core.</span></h1>
+        <p class="hero-text">
+          I am Govardhan A R, a software engineer focused on AI-powered workflows,
+          backend systems, cloud infrastructure, and thoughtful product experiences.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">Explore my work</a>
+          <a class="button secondary" href="https://github.com/govardhan-06" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+        <div class="hero-metrics" aria-label="Highlights">
+          <div><strong>AI</strong><span>Agent workflows</span></div>
+          <div><strong>Cloud</strong><span>Production systems</span></div>
+          <div><strong>DevOps</strong><span>Reliable delivery</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="terminal-card">
+          <div class="terminal-top"><i></i><i></i><i></i><span>production.log</span></div>
+          <pre><code><span class="muted">$</span> deploy portfolio --environment prod
+<span class="success">✓</span> Maven build completed
+<span class="success">✓</span> Docker image created
+<span class="success">✓</span> Kubernetes pods ready
+<span class="success">✓</span> Monitoring connected
+
+<span class="accent">status:</span> healthy
+<span class="accent">uptime:</span> 99.99%
+<span class="accent">release:</span> v1.0.0</code></pre>
+        </div>
+        <div class="floating-chip chip-one">Kubernetes</div>
+        <div class="floating-chip chip-two">Grafana</div>
+        <div class="floating-chip chip-three">Jenkins</div>
+      </div>
+    </section>
+
+    <section id="about" class="section container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">About</p>
+        <h2>Engineering useful systems, end to end.</h2>
+      </div>
+      <div class="about-grid">
+        <p class="about-lead reveal">
+          I enjoy taking products from an ambiguous problem to a dependable production system.
+          My work spans agentic AI, backend APIs, data workflows, observability, and deployment automation.
+        </p>
+        <div class="principles reveal">
+          <article><span>01</span><div><h3>Build for reality</h3><p>Design for failures, latency, cost, and real user workflows.</p></div></article>
+          <article><span>02</span><div><h3>Measure everything</h3><p>Use logs, metrics, traces, and evaluation to improve continuously.</p></div></article>
+          <article><span>03</span><div><h3>Keep it clear</h3><p>Prefer understandable architecture and maintainable implementation.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Selected work</p>
+        <h2>Projects built around real problems.</h2>
+      </div>
+      <div class="project-grid">
+        <article class="project-card featured reveal">
+          <div class="project-number">01</div>
+          <div>
+            <p class="project-type">Agentic AI · Backend · Observability</p>
+            <h3>Eva Investigation Platform</h3>
+            <p>An internal AI workflow platform for structured issue investigation, evidence gathering, and operational handoffs.</p>
+            <div class="tags"><span>Python</span><span>LangChain</span><span>PostgreSQL</span><span>GCP</span></div>
+          </div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-number">02</div>
+          <p class="project-type">Computer Vision · Safety</p>
+          <h3>SafeScape</h3>
+          <p>An AI-assisted safety platform designed to identify risky situations and support faster response.</p>
+          <div class="tags"><span>Python</span><span>OpenCV</span><span>ML</span></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-number">03</div>
+          <p class="project-type">Travel · Full Stack</p>
+          <h3>Wayfarix</h3>
+          <p>A travel discovery experience that brings destinations, planning, and recommendations into one interface.</p>
+          <div class="tags"><span>React</span><span>FastAPI</span><span>Cloud</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Capabilities</p>
+        <h2>A practical, production-oriented toolkit.</h2>
+      </div>
+      <div class="skills-grid reveal">
+        <div><h3>AI Engineering</h3><p>LLM agents, evaluations, RAG, prompt systems, tool calling</p></div>
+        <div><h3>Backend</h3><p>Python, Django, FastAPI, PostgreSQL, Redis, API design</p></div>
+        <div><h3>Cloud & DevOps</h3><p>Docker, Kubernetes, GCP, CI/CD, monitoring, automation</p></div>
+        <div><h3>Frontend</h3><p>React, Next.js, JavaScript, responsive interfaces</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact container reveal">
+      <p class="eyebrow">Let's build something useful</p>
+      <h2>Have an engineering challenge worth solving?</h2>
+      <p>I am always interested in strong teams, meaningful products, and difficult technical problems.</p>
+      <div class="contact-actions">
+        <a class="button primary" href="mailto:govardhanar06@gmail.com">govardhanar06@gmail.com</a>
+        <a class="button secondary" href="https://github.com/govardhan-06" target="_blank" rel="noopener">View GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <span>© <span id="year"></span> Govardhan A R</span>
+    <span>Built for DevOps Assignment 2 · Reg. No. 23BCE1771</span>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

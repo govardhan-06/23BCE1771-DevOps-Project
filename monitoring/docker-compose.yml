@@ -1,0 +1,83 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    container_name: devops-portfolio-app
+    ports:
+      - "8080:80"
+    networks:
+      - devops-monitoring
+    restart: unless-stopped
+
+  graphite:
+    platform: linux/amd64
+    image: graphiteapp/graphite-statsd:latest
+    container_name: devops-graphite
+    ports:
+      - "8081:80"
+      - "2003:2003"
+      - "2004:2004"
+      - "8125:8125/udp"
+    networks:
+      - devops-monitoring
+    restart: unless-stopped
+
+  metrics-agent:
+    build:
+      context: ./metrics-agent
+    container_name: devops-metrics-agent
+    environment:
+      APP_URL: http://app/health
+      GRAPHITE_HOST: graphite
+      GRAPHITE_PORT: "2003"
+      METRIC_PREFIX: portfolio
+      INTERVAL_SECONDS: "10"
+    depends_on:
+      - app
+      - graphite
+    networks:
+      - devops-monitoring
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana-oss:latest
+    container_name: devops-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+    depends_on:
+      - graphite
+    networks:
+      - devops-monitoring
+    restart: unless-stopped
+
+  nagios:
+    platform: linux/amd64
+    build:
+      context: ./nagios
+    container_name: devops-nagios
+    ports:
+      - "8082:80"
+    environment:
+      NAGIOSADMIN_USER: nagiosadmin
+      NAGIOSADMIN_PASS: nagios
+    depends_on:
+      - app
+    networks:
+      - devops-monitoring
+    restart: unless-stopped
+
+networks:
+  devops-monitoring:
+    name: devops-monitoring
+
+volumes:
+  grafana_data:

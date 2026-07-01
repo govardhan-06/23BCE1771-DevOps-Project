@@ -1,0 +1,10 @@
+Project: Online Portfolio Website DevOps Pipeline
+Student: Govardhan A R
+Registration Number: 23BCE1771
+GitHub Repository Name: 23BCE1771-DevOps-Project
+Local Application URL: http://localhost:8080
+Jenkins URL: http://localhost:8085
+Grafana URL: http://localhost:3000
+Graphite URL: http://localhost:8081
+Nagios URL: http://localhost:8082/nagios/
+Kubernetes NodePort URL: http://localhost:30080

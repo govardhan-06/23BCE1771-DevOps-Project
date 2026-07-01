@@ -1,0 +1,28 @@
+digraph DevOpsArchitecture {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.25", nodesep="0.38", ranksep="0.65", fontname="DejaVu Sans"];
+  node [shape=box, style="rounded,filled", fillcolor="#EEF2FF", color="#64748B", fontcolor="#0F172A", fontname="DejaVu Sans", fontsize=10, margin="0.16,0.10"];
+  edge [color="#64748B", penwidth=1.4, arrowsize=0.7, fontname="DejaVu Sans", fontsize=8];
+
+  developer [label="Developer"];
+  github [label="GitHub\nRepository"];
+  jenkins [label="Jenkins\nCI/CD"];
+  maven [label="Maven\nBuild"];
+  docker [label="Docker\nImage"];
+  k8s [label="Kubernetes\n2 Pods + NodePort", fillcolor="#ECFEFF"];
+  browser [label="Browser\nUsers", fillcolor="#F0FDF4"];
+  nagios [label="Nagios\nHost UP / HTTP OK", fillcolor="#FFF7ED"];
+  agent [label="Metrics\nAgent", fillcolor="#FFF7ED"];
+  graphite [label="Graphite\nMetric Store", fillcolor="#FFF7ED"];
+  grafana [label="Grafana\nDashboard", fillcolor="#FFF7ED"];
+
+  developer -> github [label="push"];
+  github -> jenkins [label="poll / trigger"];
+  jenkins -> maven;
+  maven -> docker;
+  docker -> k8s;
+  k8s -> browser;
+  k8s -> nagios [label="availability"];
+  k8s -> agent [label="health + resources"];
+  agent -> graphite;
+  graphite -> grafana;
+}
