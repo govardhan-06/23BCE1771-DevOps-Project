@@ -91,7 +91,3 @@ Create a Pipeline from SCM using this repository and `Jenkinsfile`. The pipeline
 ```bash
 python scripts/verify-project.py
 ```
-
-## Submission
-
-Read **MANUAL_STEPS.md** and capture every item in **EVIDENCE_CHECKLIST.md**. Replace the screenshot placeholders in the provided report and export it to PDF.
